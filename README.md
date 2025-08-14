@@ -2,4 +2,4 @@
 
 Integrantes: Pedro Alegria Fiamoncini, Mateus Spezia, Vinicius Oneda e Arthur Quintino.
 
-Link: https://app.swaggerhub.com/apis/furb-61e/DocumentacaoWEB2/1.0.0
+Link: https://app.swaggerhub.com/apis/furb-61e/DocumentacaoWEB2/2.1.0
