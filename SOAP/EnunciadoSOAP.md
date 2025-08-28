@@ -65,6 +65,7 @@ h) Crie uma aplicação cliente simples que faça o teste do seu Web Service SOA
 
 
 ***ENTREGÁVEIS:***
+
 a) Código-fonte do projeto Web Service
 
 b) Código-fonte da aplicação cliente
