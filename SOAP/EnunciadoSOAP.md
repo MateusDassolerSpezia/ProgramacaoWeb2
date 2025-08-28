@@ -30,7 +30,7 @@
 
 • ([Web Service SOAP (Leitura extensa e detalhada)](https://www.devmedia.com.br/web-services/2873#SOAP)) 
 
-• ([Web Service SOAP (resumido)] (https://www.gta.ufrj.br/grad/07_2/daniel/index.html))
+• ([Web Service SOAP (resumido)](https://www.gta.ufrj.br/grad/07_2/daniel/index.html))
 
 
 2) ([Execução do tutorial](https://www.devmedia.com.br/desenvolvendo-e-usando-web-services-em-java/37261))
