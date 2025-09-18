@@ -19,12 +19,18 @@ public class ServerImpl implements Server {
 	}
 
 	@Override
-	public String readAll() {
+	public String readAll() throws IllegalArgumentException{
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		return loja.readAll();
 	}
 
 	@Override
-	public String readId(int id) {
+	public String readId(int id) throws IllegalArgumentException{
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		return loja.readId(id);
 	}
 
@@ -37,7 +43,10 @@ public class ServerImpl implements Server {
 	}
 
 	@Override
-	public boolean delete(int id) {
+	public boolean delete(int id) throws IllegalArgumentException{
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		return loja.delete(id);
 	}
 
