@@ -107,6 +107,6 @@ public class Loja {
 	}
 
 	public String toString() {
-		return (getNome() + " " + getEndereco() + "\n" + readAll());
+		return ("Loja: " + getNome() + " | " + getEndereco() + "\n" + readAll());
 	}
 }

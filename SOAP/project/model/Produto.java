@@ -8,6 +8,10 @@ public class Produto {
 	private float custo;
 	private int quantidade;
 
+	public Produto() {
+		
+	}
+	
 	public Produto(int id, String nome, float preco, float custo, int quantidade) {
 		super();
 		setId(id);
@@ -22,7 +26,7 @@ public class Produto {
 	}
 
 	public void setId(int id) {
-		if (id <= 0) {
+		if (id <= 0 ) {
 			throw new IllegalArgumentException("O id deve ser maior do que zero!");
 		}
 		this.id = id;
@@ -73,6 +77,6 @@ public class Produto {
 	}
 	
 	public String toString() {
-		return(getNome() + " qtd: " + getQuantidade() + " +R$" + getPreco() + " -R$" + getCusto());
+		return("Produto: " + getNome() + " | qtd: " + getQuantidade() + " | preço: +R$" + getPreco() + " | custo: -R$" + getCusto());
 	}
 }

@@ -5,13 +5,16 @@ import javax.jws.WebService;
 import project.model.Produto;
 import project.model.Loja;
 
-@WebService(endpointInterface = "calc.CalculadoraServer")
+@WebService(endpointInterface = "project.controller.Server")
 public class ServerImpl implements Server {
 
 	private Loja loja;	
-	
+
 	@Override
-	public void create(int id, String nome, float preco, float custo, int quantidade) {
+	public void create(int id, String nome, float preco, float custo, int quantidade) throws IllegalArgumentException{
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		loja.create(new Produto(id, nome, preco, custo, quantidade));
 	}
 
@@ -21,12 +24,15 @@ public class ServerImpl implements Server {
 	}
 
 	@Override
-	public String ReadId(int id) {
+	public String readId(int id) {
 		return loja.readId(id);
 	}
 
 	@Override
-	public Produto update(int id, String nome, float preco, float custo, int quantidade) {
+	public Produto update(int id, String nome, float preco, float custo, int quantidade) throws IllegalArgumentException {
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		return loja.update(id, new Produto(id, nome, preco, custo, quantidade));
 	}
 
@@ -41,7 +47,10 @@ public class ServerImpl implements Server {
 	}
 
 	@Override
-	public String lojaToString() {
+	public String lojaToString() throws IllegalArgumentException{
+		if (this.loja == null) {
+			throw new IllegalArgumentException("Loja não pode ser nula");
+		}
 		return loja.toString();
 	}
 	
