@@ -2,7 +2,7 @@
 CREATE TABLE produtos (
 cd_produto INTEGER,
 nm_produto VARCHAR(50),
-ds_produtoo VARCHAR(70),
+ds_produto VARCHAR(70),
 vl_venda DECIMAL(8,2),
 vl_custo DECIMAL(8,2),
 qt_estoque INTEGER,
@@ -18,4 +18,5 @@ ds_loja VARCHAR(70),
 cd_produto INTEGER,
 PRIMARY KEY (cd_loja),
 FOREIGN KEY (cd_produto) REFERENCES produtos (cd_produto)
+
 );
