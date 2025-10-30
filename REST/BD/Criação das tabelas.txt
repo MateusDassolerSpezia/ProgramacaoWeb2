@@ -1,22 +1,21 @@
--- Criação da tabela produtos
-CREATE TABLE produtos (
-cd_produto INTEGER,
-nm_produto VARCHAR(50),
-ds_produto VARCHAR(70),
-vl_venda DECIMAL(8,2),
-vl_custo DECIMAL(8,2),
-qt_estoque INTEGER,
-PRIMARY KEY (cd_produto)
-);
-
-
 -- Criação da tabela lojas
 CREATE TABLE lojas (
-cd_loja INTEGER,
-nm_loja VARCHAR(50),
-ds_loja VARCHAR(70),
-cd_produto INTEGER,
-PRIMARY KEY (cd_loja),
-FOREIGN KEY (cd_produto) REFERENCES produtos (cd_produto)
-
+cd_loja INTEGER AUTO_INCREMENT,
+nm_loja VARCHAR(50) NOT NULL,
+ds_loja VARCHAR(100),
+PRIMARY KEY (cd_loja)
 );
+
+-- Criação da tabela produtos
+CREATE TABLE produtos (
+cd_produto INTEGER AUTO_INCREMENT,
+nm_produto VARCHAR(50) NOT NULL,
+ds_produto VARCHAR(100),
+vl_venda DECIMAL(10,2) NOT NULL,
+vl_custo DECIMAL(10,2) NOT NULL,
+qt_estoque INTEGER NOT NULL,
+cd_loja INTEGER,
+PRIMARY KEY (cd_produto),
+FOREIGN KEY (cd_loja) REFERENCES lojas (cd_loja)
+);
+
