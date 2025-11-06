@@ -16,19 +16,19 @@ public class Produto {
 	@Column(name = "cd_produto")
 	private int id;
 	
-	@Column(name = "nm_produto")
+	@Column(name = "nm_produto", nullable = false)
 	private String nome;
 	
 	@Column(name = "ds_produto")
 	private String descricao;
 	
-	@Column(name = "vl_venda")
+	@Column(name = "vl_venda", nullable = false)
 	private Float valorVenda;
 	
-	@Column(name = "vl_custo")
+	@Column(name = "vl_custo", nullable = false)
 	private Float valorCusto;
 	
-	@Column(name = "qt_estoque")
+	@Column(name = "qt_estoque", nullable = false)
 	private Integer estoque;
 
 	public int getId() {
