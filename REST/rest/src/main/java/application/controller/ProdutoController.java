@@ -1,5 +1,6 @@
 package application.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
@@ -32,28 +33,44 @@ public class ProdutoController {
 
     @GetMapping("/{id}")
     public ResponseEntity<Produto> buscar(@PathVariable Integer id) {
+    	try {
         Produto produto = service.buscarPorId(id);
         return ResponseEntity.ok(produto);
+    	} catch (Exception e) {
+    		return ResponseEntity.notFound().build();
+    	}
     }
 
     @PostMapping
     public ResponseEntity<Produto> inserir(@RequestBody Produto produto) {
+    	try {
         Produto novo = service.salvar(produto);
-        return ResponseEntity.status(201).body(novo);
+        return ResponseEntity.created(URI.create("/produtos/" + novo.getId())).body(novo);
+    	} catch (Exception e) {
+    		return ResponseEntity.badRequest().build();
+    	}
     }
 
     @PutMapping("/{id}")
     public ResponseEntity<Produto> atualizar(@PathVariable Integer id, @RequestBody Produto produto) {
+    	try {
         Produto existente = service.buscarPorId(id);
         produto.setId(existente.getId());
         Produto atualizado = service.salvar(produto);
         return ResponseEntity.ok(atualizado);
+    	} catch (Exception e) {
+    		return ResponseEntity.notFound().build();
+    	}
     }
 
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deletar(@PathVariable Integer id) {
+    	try {
         service.deletar(id);
         return ResponseEntity.noContent().build();
+    	} catch (Exception e) {
+    		return ResponseEntity.notFound().build();
+    	}
     }
 
     // SELECTS EXTRAS
